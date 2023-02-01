@@ -39,9 +39,23 @@ function getallimgganday(rep, res) {
     })
 }
 
+function getsongofid(rep,res) {
+    return new Promise(async(resolve,reject)=>{
+       try {
+        let a = await data.Song.findOne({
+            where: {id: rep.params.id}
+        })
+        resolve(res.status(200).json(a))
+       } catch (error) {
+        reject(error)
+       }
+    })
+}
+
 
 module.exports = {
    getallsongs,
    getadvertisement,
    getallimgganday,
+   getsongofid,
 }
