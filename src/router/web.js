@@ -12,6 +12,7 @@ function webrouter(app) {
     router.get("/imgadvertisement", usercontroller.getadvertisement)
     router.get("/all/imgganday", usercontroller.getallimgganday)
     router.get("/song_of_/:id", usercontroller.getsongofid)
+    router.get("/search/:value", usercontroller.getsearch)
     return app.use('/', router)
 }
 
